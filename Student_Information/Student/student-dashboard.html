@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Student Portal Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4F46E5", // Using Indigo as a primary color
+                        "background-light": "#F8FAFC", // A very light gray, almost white
+                        "background-dark": "#18181B", // A dark gray, zinc-900
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#27272A", // zinc-800
+                        "border-light": "#E2E8F0", // slate-200
+                        "border-dark": "#3F3F46", // zinc-700
+                        "text-primary-light": "#1E293B", // slate-800
+                        "text-primary-dark": "#F8FAFC", // slate-50
+                        "text-secondary-light": "#64748B", // slate-500
+                        "text-secondary-dark": "#94A3B8", // slate-400
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem", // 12px
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-icons-outlined {
+            font-size: 20px;
+        }
+
+        /* Additional styles for better responsiveness and consistency */
+        @media (max-width: 768px) {
+            .flex {
+                flex-direction: column;
+            }
+
+            aside {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--tw-border-opacity);
+            }
+
+            main {
+                padding: 4px;
+            }
+        }
+
+        nav a:hover {
+            background-color: rgba(79, 70, 229, 0.1);
+            /* Light indigo background */
+            color: #4F46E5;
+            /* Indigo text color */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-700 dark:text-gray-300">
+    <div class="flex h-screen">
+        <aside class="w-64 bg-white dark:bg-gray-900 flex flex-col border-r border-gray-200 dark:border-gray-800">
+            <header class="p-6 flex items-center gap-4 border-b border-gray-200 dark:border-gray-800">
+                <div
+                    class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 font-semibold">
+                    AK
+                </div>
+                <div>
+                    <h2 class="text-sm font-semibold text-gray-900 dark:text-white">Alex Kumar</h2>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">Student</p>
+                </div>
+            </header>
+            <nav class="flex-1 px-4 py-6 space-y-2">
+                <a class="flex items-center gap-3 px-3 py-2 rounded-md text-sm font-semibold bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"
+                    href="../Student/dashboard.html">
+                    <span class="material-symbols-outlined text-base">dashboard</span>
+                    Dashboard
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    href="../Student/profile.html">
+                    <span class="material-symbols-outlined text-base">person</span>
+                    Profile
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    href="../Student/Course.html">
+                    <span class="material-symbols-outlined text-base">menu_book</span>
+                    Course
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    href="../Student/grades.html">
+                    <span class="material-symbols-outlined text-base">grading</span>
+                    Grades
+                </a>
+                   <a class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    href="../Student/schedule.html">
+                    <span class="material-symbols-outlined text-base">schedule</span>
+                    Schedule
+                </a>
+                 <a class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    href="../Student/announcement.html">
+                    <span class="material-symbols-outlined text-base">campaign</span>
+                    Announcements
+                </a>
+            </nav>
+            <div class="p-4 border-t border-gray-200 dark:border-gray-800">
+                <a class="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-base">logout</span>
+                    Logout
+                </a>
+            </div>
+        </aside>
+        <main class="flex-1 p-8 overflow-y-auto">
+            <header class="flex items-center justify-between pb-7 border-b border-gray-200 dark:border-gray-800">
+                <div class="flex items-center gap-4 text-gray-900 dark:text-white">
+                    <span class="material-symbols-outlined text-xl">school</span>
+                    <h1 class="text-xl font-semibold">Student Portal</h1>
+                </div>
+            </header>
+            <br>
+            <div class="max-w-7xl mx-auto">
+                <section id="welcome" class="mb-8">
+                    <h2 class="text-3xl font-bold text-text-primary-light dark:text-text-primary-dark">Welcome back,
+                        Alex Kumar!</h2>
+                    <p class="text-text-secondary-light dark:text-text-secondary-dark mt-1">Here's your academic
+                        overview for today.</p>
+                </section>
+                <section id="overview" class="mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="bg-card-light dark:bg-card-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-semibold text-text-secondary-light dark:text-text-secondary-dark">Attendance
+                            </h3>
+                            <span
+                                class="material-icons-outlined text-text-secondary-light dark:text-text-secondary-dark text-lg">calendar_view_week</span>
+                        </div>
+                        <p class="text-4xl font-bold text-text-primary-light dark:text-text-primary-dark">87%</p>
+                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mb-4">This semester
+                        </p>
+                        <div class="w-full bg-gray-200 dark:bg-zinc-700 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" style="width: 87%"></div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-card-light dark:bg-card-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-semibold text-text-secondary-light dark:text-text-secondary-dark">CGPA</h3>
+                            <span
+                                class="material-icons-outlined text-text-secondary-light dark:text-text-secondary-dark text-lg">trending_up</span>
+                        </div>
+                        <p class="text-4xl font-bold text-text-primary-light dark:text-text-primary-dark">8.5</p>
+                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Out of 10.0</p>
+                    </div>
+                    <div
+                        class="bg-card-light dark:bg-card-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-semibold text-text-secondary-light dark:text-text-secondary-dark">Subjects
+                            </h3>
+                            <span
+                                class="material-icons-outlined text-text-secondary-light dark:text-text-secondary-dark text-lg">library_books</span>
+                        </div>
+                        <p class="text-4xl font-bold text-text-primary-light dark:text-text-primary-dark">6</p>
+                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">This semester</p>
+                    </div>
+                </section>
+                <section id="quick-actions" class="mb-8">
+                    <div
+                        class="bg-card-light dark:bg-card-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+                    <h2 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark">Quick Actions
+                    </h2>
+                    <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mb-6">Frequently used
+                        features</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <button
+                            class="flex flex-col items-center justify-center p-4 bg-background-light dark:bg-background-dark rounded-lg border border-border-light dark:border-border-dark hover:bg-gray-100 dark:hover:bg-zinc-700/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
+                            <span class="material-icons-outlined text-blue-500 text-2xl mb-2">menu_book</span>
+                            <span class="font-medium text-sm text-text-primary-light dark:text-text-primary-dark">View
+                                Marks</span>
+                        </button>
+                        <button
+                            class="flex flex-col items-center justify-center p-4 bg-background-light dark:bg-background-dark rounded-lg border border-border-light dark:border-border-dark hover:bg-gray-100 dark:hover:bg-zinc-700/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
+                            <span class="material-icons-outlined text-green-500 text-2xl mb-2">event_available</span>
+                            <span
+                                class="font-medium text-sm text-text-primary-light dark:text-text-primary-dark">Attendance</span>
+                        </button>
+                        <button
+                            class="flex flex-col items-center justify-center p-4 bg-background-light dark:bg-background-dark rounded-lg border border-border-light dark:border-border-dark hover:bg-gray-100 dark:hover:bg-zinc-700/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
+                            <span class="material-icons-outlined text-purple-500 text-2xl mb-2">schedule</span>
+                            <span class="font-medium text-sm text-text-primary-light dark:text-text-primary-dark">Time
+                                Table</span>
+                        </button>
+                        <button
+                            class="flex flex-col items-center justify-center p-4 bg-background-light dark:bg-background-dark rounded-lg border border-border-light dark:border-border-dark hover:bg-gray-100 dark:hover:bg-zinc-700/50 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
+                            <span class="material-icons-outlined text-red-500 text-2xl mb-2">trending_up</span>
+                            <span class="font-medium text-sm text-text-primary-light dark:text-text-primary-dark">Apply
+                                Leave</span>
+                        </button>
+                    </div>
+                </div>
+                </section>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <section id="today-classes">
+                        <div
+                            class="bg-card-light dark:bg-card-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+                            <h2 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark">Today's
+                                Classes</h2>
+                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mb-6">Your schedule
+                                for today</p>
+                            <div class="space-y-4">
+                                <div
+                                    class="flex justify-between items-center p-4 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+                                    <div>
+                                        <p class="font-semibold text-text-primary-light dark:text-text-primary-dark">
+                                            Mathematics</p>
+                                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Dr. Sarah
+                                            Johnson • Room 205</p>
+                                    </div>
+                                    <span
+                                        class="text-sm font-medium bg-gray-200 dark:bg-zinc-700 text-text-primary-light dark:text-text-primary-dark px-2.5 py-1 rounded-full">9:30
+                                        AM</span>
+                                </div>
+                                <div
+                                    class="flex justify-between items-center p-4 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+                                    <div>
+                                        <p class="font-semibold text-text-primary-light dark:text-text-primary-dark">Physics
+                                        </p>
+                                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Prof.
+                                            Mike Wilson • Lab 1</p>
+                                    </div>
+                                    <span
+                                        class="text-sm font-medium bg-gray-200 dark:bg-zinc-700 text-text-primary-light dark:text-text-primary-dark px-2.5 py-1 rounded-full">11:30
+                                        AM</span>
+                                </div>
+                                <div
+                                    class="flex justify-between items-center p-4 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+                                    <div>
+                                        <p class="font-semibold text-text-primary-light dark:text-text-primary-dark">
+                                            Chemistry</p>
+                                        <p class="text-sm text-text-secondary-light dark:text-secondary-dark">Dr. Lisa
+                                            Brown • Lab 2</p>
+                                    </div>
+                                    <span
+                                        class="text-sm font-medium bg-gray-200 dark:bg-zinc-700 text-text-primary-light dark:text-text-primary-dark px-2.5 py-1 rounded-full">2:15
+                                        PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="announcements">
+                        <div
+                            class="bg-card-light dark:bg-card-dark p-6 rounded-lg border border-border-light dark:border-border-dark">
+                            <h2 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark">
+                                Announcements</h2>
+                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mb-6">Latest updates
+                                and notices</p>
+                            <div class="space-y-4">
+                                <div
+                                    class="flex justify-between items-center pb-4 border-b border-border-light dark:border-border-dark">
+                                    <div>
+                                        <p class="font-medium text-text-primary-light dark:text-text-primary-dark">Mid-term
+                                            exams schedule released</p>
+                                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">2 hours
+                                            ago</p>
+                                    </div>
+                                    <span
+                                        class="text-xs font-semibold bg-red-600 text-white px-3 py-1 rounded-full">Urgent</span>
+                                </div>
+                                <div class="pb-4 border-b border-border-light dark:border-border-dark">
+                                    <p class="font-medium text-text-primary-light dark:text-text-primary-dark">Library will
+                                        be closed on Saturday</p>
+                                    <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">1 day ago</p>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-text-primary-light dark:text-text-primary-dark">Sports day
+                                        registration open</p>
+                                    <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">3 days ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
